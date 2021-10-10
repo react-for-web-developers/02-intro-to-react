@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #1d1e2c;
+  color: #c3baba;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  display: flex;
+  margin: 5rem auto;
+  max-width: 120rem;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.player-label {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.player-count {
+  font-size: 10rem;
+  color: #e9e3e6;
+}
+
+.button {
+  background: none;
+  border: none;
+  padding: 1rem 1.2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 550;
+}
+
+.player-increase {
+  background-color: #68a357;
+  color: #fff;
+  border-radius: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+.player-decrease {
+  background-color: #f7934c;
+  border-radius: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+.save-btn {
+  background-color: #0072bb;
+  border-radius: 1.2rem;
+  margin-bottom: 3.6rem;
+}
+.scores-container {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.saved-score-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #fff;
+  margin: 0.3rem;
+  border-radius: 1.2rem;
+}
+
+.saved-score-label,
+.saved-score-number {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.saved-score-label {
+  margin-right: 2rem;
+}
+
+.saved-score-number {
+  color: #f7934c;
+}
