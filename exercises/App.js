@@ -22,7 +22,6 @@ export default function App() {
       }
       return player;
     });
-    //console.log({ playersEdited });
     setplayerScore(playersEdited);
   };
 
