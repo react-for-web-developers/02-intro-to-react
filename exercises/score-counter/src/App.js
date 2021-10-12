@@ -29,8 +29,11 @@ const App = () => {
 		setPlayer2Score(player2Score - 1);
 	};
 
+	// Final scores
 	const saveFinalScore = () => {
 		setFinalScores([...finalScores, { player1Score, player2Score }]);
+		setPlayer1Score(0);
+		setPlayer2Score(0);
 	};
 
 	return (
