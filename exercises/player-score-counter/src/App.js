@@ -3,32 +3,34 @@ import { useState } from 'react';
 
 function App() {
   const [p1score, setP1score] = useState(0);
+  const [p2score, setP2score] = useState(0);
+  const [scores, setScores] = useState([])
   
-  const increaseP1Score = () => {
-    setP1score(p1score + 1);
-  }
+  const increaseP1Score = () => setP1score(p1score + 1);
   
   const decreaseP1Score = () => {
-    setP1score(p1score - 1);
+    if (p1score > 0) {
+      setP1score(p1score - 1);
+    }
   }
-
-  const [p2score, setP2score] = useState(0);
   
   const increaseP2Score = () => {
     setP2score(p2score + 1);
   }
   
   const decreaseP2Score = () => {
-    setP2score(p2score - 1);
+    if (p2score > 0) {
+      setP2score(p2score - 1);
+    }
   }
-
-  const [scores, setScores] = useState([])
 
   const saveScore = () => {
     setScores([...scores, {
-      player1: p1score,
-      player2: p2score
+      p1score,
+      p2score
     }]);
+    setP1score(0);
+    setP2score(0);
   }
 
   return (
@@ -41,8 +43,8 @@ function App() {
           <p className="icon">😼</p>
           <span>Score: {p1score}</span>
           <div>
-            <button className="btn btn-left" onClick={increaseP1Score}>Increase Score</button>
-            <button className="btn btn-right" onClick={decreaseP1Score}>Decrease Score</button>
+            <button className="btn btn-left" onClick={increaseP1Score}>Increase</button>
+            <button className="btn btn-right" onClick={decreaseP1Score}>Decrease</button>
           </div>
         </div>
 
@@ -55,8 +57,8 @@ function App() {
           <p className="icon">👻</p>
           <span>Score: {p2score}</span>
           <div>
-            <button className="btn btn-left" onClick={increaseP2Score}>Increase Score</button>
-            <button className="btn btn-right" onClick={decreaseP2Score}>Decrease Score</button>
+            <button className="btn btn-left" onClick={increaseP2Score}>Increase</button>
+            <button className="btn btn-right" onClick={decreaseP2Score}>Decrease</button>
           </div>
         </div>
       </section>
@@ -65,16 +67,14 @@ function App() {
         <button className="btn" onClick={saveScore}>Save Game</button>
       </div>
 
-      {scores.map(score => (
+      {scores.map(({p1score, p2score}) => (
         <section className="scores">
           <div className="score">
-            <span>Player 1 😼: </span>
-            <span>{score.player1}</span>
+            <span>Player 1 😼: {p1score}</span>
           </div>
           
           <div className="score">
-            <span>Player 2 👻: </span>
-            <span>{score.player2}</span>
+            <span>Player 2 👻: {p2score}</span>
           </div>
         </section>
       ))}
