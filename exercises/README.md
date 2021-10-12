@@ -11,5 +11,5 @@ Create a react app that includes a 2 player score counter.
 ### BONUS
 
 * Include a "save game score" feature
-  * [ ] A button with the text "save game" should save the current scores into a list
-  * [ ] Display the list of past scores at the bottom of the page 
+  * [x] A button with the text "save game" should save the current scores into a list
+  * [x] Display the list of past scores at the bottom of the page 
