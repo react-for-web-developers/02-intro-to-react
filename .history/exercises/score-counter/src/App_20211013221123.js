@@ -62,11 +62,7 @@ function App() {
       <button onClick={saveGame}>Save game</button>
       <div>
         {results.map(({count1, count2})=>(
-          <div>
-            <div>Player1: {count1}</div>
-            <div>Player2: {count2}</div>
-          
-          </div>
+          <
         ))}
       </div>
     </div>
