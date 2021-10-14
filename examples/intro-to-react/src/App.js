@@ -10,7 +10,18 @@ function App() {
   const [scoreP2, setScoreP2] = useState(0);
   const [savedGames, setSavedGames] = useState([]);
 
-  const handleSave = () => [...savedGames, { scoreP1: scoreP1, scoreP2: scoreP2, savedAt: formatDistanceToNow(new Date()) }];
+  const handleSave = () => {
+    setSavedGames(
+      [...savedGames, { 
+          scoreP1, 
+          scoreP2, 
+          savedAt: formatDistanceToNow(new Date()) 
+        }]);
+
+        setScoreP1(0);
+        setScoreP2(0);
+      }
+      ;
 
   return (
     <div className="App">
@@ -47,8 +58,7 @@ function App() {
           <ul>
             {console.log(savedGames)}
 
-            {
-              savedGames.length > 0 &&
+            { savedGames.length > 0 &&
 
               savedGames.map((game, idx) => (
                 <li key={idx}>
